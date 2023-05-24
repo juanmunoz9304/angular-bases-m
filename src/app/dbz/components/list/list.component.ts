@@ -9,7 +9,7 @@ import { ICharacter } from '../../interfaces/character.interface';
 export class ListComponent {
 
   @Output()
-  public onDeleteId : EventEmitter<number> = new EventEmitter();
+  public onDeleteId : EventEmitter<string> = new EventEmitter();
 
   @Input()
   public characerList : ICharacter[] = [
@@ -21,7 +21,7 @@ export class ListComponent {
 
 
 
-  public onDeleteCharacter (index : number) : void {
-    this.onDeleteId.emit(index);
+  public onDeleteCharacter (id : string) : void {
+    this.onDeleteId.emit(id);
   }
 }
